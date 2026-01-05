@@ -2,11 +2,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Fast, closed-form solver achieving **50-120× speedups** over iterative methods for separable polynomial constraints.
+Fast, closed-form solver achieving 50-120x speedups over iterative methods for separable polynomial constraints.
 
 ## Overview
 
-The **Parametric K-Formula (PK-Formula)** provides an efficient, non-iterative method for solving constraints of the form:
+The Parametric K-Formula (PK-Formula) provides an efficient, non-iterative method for solving constraints of the form:
 
 ```
 sum(a_i * x_i^p_i) = b
@@ -16,19 +16,19 @@ where each variable appears in only one term (separable structure).
 
 ### Key Features
 
-- **⚡ Fast**: O(n) complexity, 50-120× speedup vs Newton-Raphson
-- **🎯 Deterministic**: Constant execution time, no convergence loops
-- **🔧 Simple**: Requires only basic arithmetic and power functions
-- **📦 Portable**: Implementations in MATLAB, Python, and C
-- **🚀 Real-time Ready**: Proven on embedded systems (Arduino, microcontrollers)
+- **Fast**: O(n) complexity, 50-120x speedup vs Newton-Raphson
+- **Deterministic**: Constant execution time, no convergence loops
+- **Simple**: Requires only basic arithmetic and power functions
+- **Portable**: Implementations in MATLAB, Python, and C
+- **Real-time Ready**: Proven on embedded systems (Arduino, microcontrollers)
 
 ### Perfect For
 
-- 📍 **Positioning systems** (trilateration, multilateration)
-- 🤖 **Robotic control** (kinematic constraints)
-- 📊 **Regularized optimization** (L^p penalties)
-- 🔋 **Battery management** (power distribution)
-- ⚙️ **Embedded systems** (resource-constrained devices)
+- Positioning systems (trilateration, multilateration)
+- Robotic control (kinematic constraints)
+- Regularized optimization (L^p penalties)
+- Battery management (power distribution)
+- Embedded systems (resource-constrained devices)
 
 ## Performance
 
@@ -36,10 +36,10 @@ Benchmarks on Intel Core i7-10750H @ 2.6GHz:
 
 | Problem Size | PK-Formula | MATLAB fsolve | Python scipy | Speedup |
 |--------------|------------|---------------|--------------|---------|
-| n=5          | 0.009 ms   | 0.452 ms      | 0.523 ms     | 50-58×  |
-| n=10         | 0.014 ms   | 0.893 ms      | 1.012 ms     | 63-72×  |
-| n=20         | 0.027 ms   | 1.782 ms      | 2.015 ms     | 66-75×  |
-| n=50         | 0.062 ms   | 4.391 ms      | 4.923 ms     | 71-79×  |
+| n=5          | 0.009 ms   | 0.452 ms      | 0.523 ms     | 50-58x  |
+| n=10         | 0.014 ms   | 0.893 ms      | 1.012 ms     | 63-72x  |
+| n=20         | 0.027 ms   | 1.782 ms      | 2.015 ms     | 66-75x  |
+| n=50         | 0.062 ms   | 4.391 ms      | 4.923 ms     | 71-79x  |
 
 ### Embedded Systems (Arduino Due)
 
@@ -145,7 +145,7 @@ print(f"Regularized parameters: {theta}")
 
 ## Examples
 
-Complete working examples are provided in the `examples/` directory:
+Complete working examples are provided in the examples/ directory:
 
 ### MATLAB
 - `example_trilateration.m` - Indoor positioning system
@@ -203,35 +203,35 @@ See paper and examples for detailed guidance.
 
 ### 1. Indoor Positioning (Trilateration)
 - **Problem**: Determine object position from sensor distance measurements
-- **Speedup**: 58× vs MATLAB fsolve
+- **Speedup**: 58x vs MATLAB fsolve
 - **Use case**: Real-time tracking at 100 Hz
 
 ### 2. Regularized Regression
 - **Problem**: Enforce polynomial penalty constraints in model fitting
-- **Speedup**: 65× vs coordinate descent
+- **Speedup**: 65x vs coordinate descent
 - **Use case**: Ridge regression, elastic net, sparse learning
 
 ### 3. Robotic Control
 - **Problem**: Solve kinematic constraints in trajectory control
-- **Speedup**: 39× vs Newton-Raphson
+- **Speedup**: 39x vs Newton-Raphson
 - **Use case**: 250 Hz control loops with guaranteed timing
 
 ### 4. Battery Management
 - **Problem**: Optimize cell charging rates under power constraints
-- **Speedup**: 41× on automotive microcontroller
+- **Speedup**: 41x on automotive microcontroller
 - **Use case**: 500 Hz update rate for dynamic load response
 
 ## Limitations
 
-The PK-Formula applies specifically to **separable polynomial constraints**:
+The PK-Formula applies specifically to separable polynomial constraints:
 
-✅ **Can solve:**
+**Can solve:**
 - Trilateration/multilateration problems
 - Polynomial regularization constraints
 - Decoupled kinematic systems
 - Power distribution optimization
 
-❌ **Cannot solve:**
+**Cannot solve:**
 - General polynomial systems with cross-terms
 - Multiple simultaneous constraints
 - Coupled variables (x*y terms)
@@ -243,10 +243,10 @@ For general polynomial systems, use standard solvers (fsolve, scipy.optimize, et
 
 | Method | Complexity | Deterministic? | Setup | Best For |
 |--------|-----------|----------------|-------|----------|
-| **PK-Formula** | O(n) | ✓ Yes | Simple | Separable systems, real-time |
-| Newton-Raphson | O(n³) per iter | ✗ No | Jacobian | General systems |
-| Coordinate Descent | O(n) per iter | ✗ No | Moderate | Separable optimization |
-| Homotopy Continuation | O(n³) per step | ✗ No | Complex | Complete solutions |
+| PK-Formula | O(n) | Yes | Simple | Separable systems, real-time |
+| Newton-Raphson | O(n³) per iter | No | Jacobian | General systems |
+| Coordinate Descent | O(n) per iter | No | Moderate | Separable optimization |
+| Homotopy Continuation | O(n³) per step | No | Complex | Complete solutions |
 
 ## Citation
 
@@ -265,14 +265,14 @@ If you use this software in your research, please cite:
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+MIT License - see LICENSE file for details.
 
 ## Author
 
 **Serge T. Rwego**  
 Independent Researcher, Kigali, Rwanda  
-📧 Email: rwegotserge@gmail.com  
-🔗 ORCID: [0009-0007-2484-4274](https://orcid.org/0009-0007-2484-4274)
+Email: rwegotserge@gmail.com  
+ORCID: [0009-0007-2484-4274](https://orcid.org/0009-0007-2484-4274)
 
 ## Contributing
 
@@ -294,7 +294,7 @@ Contributions are welcome! Please:
 ## Acknowledgments
 
 Original mathematical challenge posed by high school classmates (2012).  
-Special thanks to **Anastase Nshimiryayo** and **Theoneste Hakizimana** for their encouragement and feedback.
+Special thanks to Anastase Nshimiryayo and Theoneste Hakizimana for their encouragement and feedback.
 
 ## Related Work
 
@@ -309,7 +309,7 @@ A: Use PK-Formula when:
 - Your problem has separable polynomial structure
 - You need deterministic, fast execution
 - You're working on embedded/real-time systems
-- You need 50-100× speedup over iterative methods
+- You need 50-100x speedup over iterative methods
 
 Use fsolve/scipy when:
 - You have general nonlinear systems
@@ -337,11 +337,11 @@ A: Yes, for constraint satisfaction in optimization. For objective optimization,
 
 ## Support
 
-- 📖 Documentation: See [docs/](docs/) directory
-- 🐛 Bug reports: [GitHub Issues](https://github.com/username/pk-formula/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/username/pk-formula/discussions)
-- 📧 Email: rwegotserge@gmail.com
+- Documentation: See docs/ directory
+- Bug reports: [GitHub Issues](https://github.com/username/pk-formula/issues)
+- Discussions: [GitHub Discussions](https://github.com/username/pk-formula/discussions)
+- Email: rwegotserge@gmail.com
 
 ---
 
-**Made with ❤️ in Kigali, Rwanda**
+Made with care in Kigali, Rwanda
